@@ -6,3 +6,4 @@ ____
 * ### [Day 1: Report Repair :palm_tree:](https://github.com/ONsistems/advent-code/tree/main/2020/1)
 * ### [Day 2: Password Philosophy :key:](https://github.com/ONsistems/advent-code/tree/main/2020/2)
 * ### [Day 3: Toboggan Trajectory :snowboarder:](https://github.com/ONsistems/advent-code/tree/main/2020/3)
+* ### [Day 4: Passport Processing :bookmark_tabs:](https://github.com/ONsistems/advent-code/tree/main/2020/4)
