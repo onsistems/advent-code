@@ -7,3 +7,4 @@ ____
 * ### [Day 2: Password Philosophy :key:](https://github.com/ONsistems/advent-code/tree/main/2020/2)
 * ### [Day 3: Toboggan Trajectory :snowboarder:](https://github.com/ONsistems/advent-code/tree/main/2020/3)
 * ### [Day 4: Passport Processing :bookmark_tabs:](https://github.com/ONsistems/advent-code/tree/main/2020/4)
+* ### [Day 5: Binary Boarding :seat:](https://github.com/ONsistems/advent-code/tree/main/2020/5)
