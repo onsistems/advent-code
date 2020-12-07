@@ -9,3 +9,4 @@ ____
 * ### [Day 4: Passport Processing :bookmark_tabs:](https://github.com/ONsistems/advent-code/tree/main/2020/4)
 * ### [Day 5: Binary Boarding :seat:](https://github.com/ONsistems/advent-code/tree/main/2020/5)
 * ### [Day 6: Custom Customs :pencil:](https://github.com/ONsistems/advent-code/tree/main/2020/6)
+* ### [Day 7: Handy Haversacks :handbag:](https://github.com/ONsistems/advent-code/tree/main/2020/7)
