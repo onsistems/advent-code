@@ -14,9 +14,7 @@ foreach ($arr_data as $key => $value) {
 			$bin_arr[$i] = $bin_arr[$i].$value[$i];
 		}else{
 			$bin_arr[$i]=$value[$i];
-		}
-		
-		
+		}	
 	}
 }
 
@@ -47,4 +45,47 @@ foreach ($bin_arr as $key => $value) {
 }
 
 var_dump($gamma,$epsilon); //1082324
+
+oxigen($arr_data,0);
+
+function oxigen($arr,$step,$most="1")
+{
+	var_dump(count($arr));
+	if(count($arr) == 1){
+		$bin_oxigen = $arr[0];
+		echo $bin_oxigen;
+	}
+
+	if(count($arr)==2){
+		var_dump($arr);
+		$bin_oxigen = $arr[0][$step]=="1"?$arr[0]:$arr[1];
+		echo $bin_oxigen;
+	}
+
+	$new_arr=[];
+	if(count($arr)>2){
+		foreach ($arr as $key => $value) {
+			if($value[$step]==$most){
+				array_push($new_arr, $value);
+			}
+		}
+		$bin_arr = [];
+		foreach ($new_arr as $key => $value) {
+			for ($i=0; $i < 12; $i++) {
+				if($key>0){
+					$bin_arr[$i] = $bin_arr[$i].$value[$i];
+				}else{
+					$bin_arr[$i]=$value[$i];
+				}	
+			}
+		}	
+		$common = getHighest($bin_arr[$step+1]);
+		//$common = $common=='1'?'0':'1';
+
+		oxigen($new_arr,$step+1,$common);
+	}
+
+	//111001101101 {3693}
+	//010011111000 {1272}
+}
 
