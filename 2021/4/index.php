@@ -1,5 +1,7 @@
 <?php
 // Advent of Code - Day 4
+// Part1 - 67716 (board:66,draw:66)
+// Part2 - 1830 (board:31,draw:6)
 
 $data = file_get_contents('input.txt');
 $arr_data = preg_split('/AAA/', $data, -1, PREG_SPLIT_NO_EMPTY);
@@ -23,6 +25,7 @@ $board_result = function($board,$key_board,$draw)
 	}
 };
 
+$winer_boards = [];
 foreach ($draw_arr as $key => $value) {
 	foreach ($arr_data as $key2 => $value2) {
 		
@@ -45,20 +48,13 @@ foreach ($draw_arr as $key => $value) {
 
 		
 		if(reset($top_with_countX)==5 || reset($top_with_countY)==5){
-			$board_win = $arr_data[$key3];
-
-			$arr_number = array_map("inter", preg_split('/\n+/', $board_win, -1, PREG_SPLIT_NO_EMPTY));
-			$counter = 0;
-			for ($i=0; $i < count($arr_number); $i++) { 
-				for ($j=0; $j <count($arr_number[$i]); $j++) { 
-					if(!in_array($i, $top_with_countX) && !in_array($j, $top_with_countY)) {
-						var_dump($arr_number[$i][$j]);
-						$counter += (int)$arr_number[$i][$j];
-					}
-				}
-			}
-			var_dump($counter*$value);
-			var_dump($key3,$value,$arr_data[$key3],$value3,$top_with_countX,$top_with_countY);die;//67716 (board:66,draw:66)
+			if(!in_array($key3, $winer_boards))	array_push($winer_boards, $key3);
+			//var_dump($key3,$value,$arr_data[$key3],$value3,$top_with_countX,$top_with_countY);die;//67716 (board:66,draw:66)
 		}
 	}
+
+	if(count($winer_boards)==100) break;
 }
+var_dump($winer_boards);
+$last_board = array_pop($winer_boards);
+var_dump($last_board,$result[$last_board],$arr_data[$last_board]);
