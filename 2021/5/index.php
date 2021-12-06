@@ -12,6 +12,7 @@ foreach ($arr_data as $key => $value) {
 	$pos1 = explode(',',$split1[0]);
 	$pos2 = explode(',',$split1[1]);
 
+	// Part 1
 	if($pos1[0]==$pos2[0])
 	{
 		$inicio = (int)$pos1[1];
@@ -34,7 +35,24 @@ foreach ($arr_data as $key => $value) {
 		}
 	}
 
-	//var_dump($pos1,$pos2);die;
+	// Part 2
+	if(abs((int)$pos1[0]-(int)$pos2[0])==abs((int)$pos1[1]-(int)$pos2[1]))
+	{
+		$inicio = [(int)$pos1[0],(int)$pos1[1]];
+		$fin = [(int)$pos2[0],(int)$pos2[1]];
+		$step1 = (int)$pos1[0]-(int)$pos2[0] > 0 ? -1:1;
+		$step2 = (int)$pos1[1]-(int)$pos2[1] > 0 ? -1:1;
+
+		while($inicio[0]!=$fin[0] && $inicio[1]!=$fin[1]) {
+			if(!isset($hidro_line[$inicio[0].'-'.$inicio[1]])) $hidro_line[$inicio[0].'-'.$inicio[1]]=0;
+			$hidro_line[$inicio[0].'-'.$inicio[1]]++;
+			$inicio[0] = $inicio[0]+$step1;
+			$inicio[1] = $inicio[1]+$step2;
+		}
+		if(!isset($hidro_line[$inicio[0].'-'.$inicio[1]])) $hidro_line[$inicio[0].'-'.$inicio[1]]=0;
+		$hidro_line[$inicio[0].'-'.$inicio[1]]++;
+	}
+
 }
 
 $mas_2_lines=0;
@@ -43,4 +61,4 @@ foreach ($hidro_line as $key => $value) {
 	if($value>=2) $mas_2_lines++;
 }
 
-var_dump($mas_2_lines);
+var_dump($mas_2_lines);//7297
